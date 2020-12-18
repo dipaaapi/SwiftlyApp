@@ -11,9 +11,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+ 
+        func switchScreen() {
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            if let viewController = mainStoryboard.instantiateViewController(withIdentifier: "OnboardView") as? UIViewController {
+                self.present(viewController, animated: true, completion: nil)
+            }
+        }
+        
     }
-
-
 }
-
